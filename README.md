@@ -2,15 +2,15 @@
 ---
 ## Basic Details
 
-**Name:** Rithesh Patnasetty
+**Name:** Rohit Varale
 
 **College:** New Horizon College of Engineering
 
-**Email:** [ritheshpatil6@gmail.com](mailto:ritheshpatil6@gmail.com)
+**Email:** [rohitvarale2003@gmail.com](mailto:rohitvarale2003@gmail.com)
 
-**GitHub Profile:** [rithesh45](https://github.com/rithesh45)  
+**GitHub Profile:** [Rohitvarale04](https://github.com/Rohitvarale04/Samsung-Riscv-/edit/main/README.md)  
 
-**LinkedIn Profile:** [Rithesh Patnasetty](https://www.linkedin.com/in/rithesh-patnasetty-61478a278/)
+**LinkedIn Profile:** [RohitVarale]
 
 ---
 ## Tasks
