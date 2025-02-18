@@ -62,14 +62,14 @@ The **Burglar Alarm System** using the **VSDSquadron Mini** and an **Ultrasonic 
 
 ## Code Implementation**  
 
-```c
-#include "debug.h"
 
-uint16_t distance;
-uint16_t press;
+    #include "debug.h"
 
-void Input_Capture_Init(uint16_t arr, uint32_t psc)
-{
+    uint16_t distance;
+    uint16_t press;
+
+    void Input_Capture_Init(uint16_t arr, uint32_t psc)
+    {
     GPIO_InitTypeDef        GPIO_InitStructure = {0};
     TIM_ICInitTypeDef       TIM_ICInitStructure = {0};
     TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure = {0};
@@ -123,9 +123,9 @@ void Input_Capture_Init(uint16_t arr, uint32_t psc)
     TIM_SelectSlaveMode(TIM1, TIM_SlaveMode_Reset);
     TIM_SelectMasterSlaveMode(TIM1, TIM_MasterSlaveMode_Enable);
     TIM_Cmd(TIM1, ENABLE);
-}
+    }
 
-uint16_t pressed(void){
+    uint16_t pressed(void){
     if(GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_3)==1){
         Delay_Ms(500);
         GPIO_WriteBit(GPIOC,GPIO_Pin_7,SET);
@@ -135,10 +135,10 @@ uint16_t pressed(void){
         press=!press;
     }
     return press;
-}
+    }
 
-int main(void)
-{
+    int main(void)
+    {
     SystemCoreClockUpdate();
     Delay_Init();
     USART_Printf_Init(115200);
@@ -186,12 +186,12 @@ int main(void)
             }
         }  
     }
-}
+    }
 
-void TIM1_CC_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+    void TIM1_CC_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 
-void TIM1_CC_IRQHandler(void)
-{
+    void TIM1_CC_IRQHandler(void)
+    {
     if (TIM_GetITStatus(TIM1, TIM_IT_CC1) != RESET)
     {
         TIM_SetCounter(TIM1,0);
@@ -205,6 +205,18 @@ void TIM1_CC_IRQHandler(void)
     }
 
     TIM_ClearITPendingBit(TIM1, TIM_IT_CC1 | TIM_IT_CC2);
-}
+    }
+----
+
+IMAGE1
+
+![Alt text](burgleralaram/rot.png)
+
+IMAGE2
+
+![Alt text](burgleralaram/rot1.png)
+
+[VIDEO LINK](https://drive.google.com/file/d/1lJRIyfwKi9c_foxtRzaHJsgNivz723Fg/view?usp=drivesdk )
+
 
 
